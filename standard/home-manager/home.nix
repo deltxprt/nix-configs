@@ -47,13 +47,21 @@
 
   # TODO: Set your username
   home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
+    username = "delta";
+    homeDirectory = "/home/delta";
   };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+  # home.packages = with pkgs; [ 
+    "curl",
+    "wget",
+    "git",
+    "ripgrep",
+    "nodejs",
+    "neovim",
+    "xclip"
+  ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
