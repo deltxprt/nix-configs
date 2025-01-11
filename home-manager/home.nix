@@ -139,12 +139,13 @@
 
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch";
+      update = "sudo nixos-rebuild switch --flake .#desktop";
+      uupdate = "home-manager switch --flake .#delta@desktop";
     };
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "golang"];
-      theme = "powerlevel10";
+#      theme = "powerlevel10";
     };
     zplug = {
       enable = true;
