@@ -1,5 +1,7 @@
 pkgs: {
   neovim,
   brave,
-  jetbrains.idea-ultimate
+  jetbrains.idea-ultimate,
+  localsend,
+  ntfy
 }
