@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
   imports =
@@ -75,7 +75,17 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  #services.xserver.enable = true;
+
+  services.xserver = {
+		enable = true;
+		libinput.enable = true;
+		displayManager.lightdm.enable = true;
+		desktopManager = {
+			cinnamon.enable = true;
+		};
+		displayManager.defaultSession = "cinnamon";
+	};
   #services.flatpak.enable = true;
 
   # Configure keymap in X11
@@ -85,8 +95,19 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+  # Setup SwayWM
+  # Enable the gnome-keyring secrets vault. 
+  # Will be exposed through DBus to programs willing to store secrets.
+  services.gnome.gnome-keyring.enable = true;
+
+  # enable Sway window manager
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
   # Enable sound.
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
   # OR
   # services.pipewire = {
   #   enable = true;
@@ -105,18 +126,26 @@
   #   ];
   # };
 
-  # programs.firefox.enable = true;
+  programs.firefox.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  # environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
   #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-  # ];
+     python3
+     home-manager
+     wget
+     neovim
+     grim # screenshot functionality
+     slurp # screenshot functionality
+     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
+     mako # notification system developed by swaywm maintainer
+  ];
 
   networking.hostName = "D37T4-D35KT0P";
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
+  programs.zsh.enable = true;
   users.users = {
     # FIXME: Replace with your username
     delta = {
@@ -127,6 +156,7 @@
       isNormalUser = true;
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["wheel"];
+      shell = pkgs.zsh;
     };
   };
 
@@ -150,6 +180,31 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+  };
+
+  security.polkit.enable = true;
+  security.pam.services.swaylock = {};
+
+  systemd.user.services.kanshi = {
+    description = "kanshi daemon";
+    environment = {
+      WAYLAND_DISPLAY="wayland-1";
+      DISPLAY = ":0";
+    }; 
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = ''${pkgs.kanshi}/bin/kanshi -c kanshi_config_file'';
+    };
+  };
+
+  services.greetd = {                                                      
+    enable = true;                                                         
+    settings = {                                                           
+      default_session = {                                                  
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "greeter";                                                  
+      };                                                                   
+    };                                                                     
   };
 
   # List services that you want to enable:

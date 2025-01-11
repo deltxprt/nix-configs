@@ -1,7 +1,21 @@
-pkgs: {
-  neovim,
-  brave,
-  jetbrains.idea-ultimate,
-  localsend,
-  ntfy
+{ pkgs, ... }:
+{  
+  home.packages= with pkgs; [
+    pkgs.stow
+    pkgs.kitty
+    pkgs.zsh
+    pkgs.git
+    pkgs.neovim
+    pkgs.brave
+    pkgs.jetbrains.idea-ultimate
+    pkgs.localsend
+    pkgs.ntfy-sh
+    pkgs.polybar
+    pkgs.rofi-wayland
+    pkgs.waybar
+    pkgs.go
+    pkgs.nodejs_22
+    pkgs.libgcc
+    pkgs.zig
+  ];
 }
