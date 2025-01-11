@@ -11,11 +11,12 @@
     pkgs.localsend
     pkgs.ntfy-sh
     pkgs.polybar
-    pkgs.rofi-wayland
+    pkgs.wofi
     pkgs.waybar
     pkgs.go
     pkgs.nodejs_22
     pkgs.libgcc
     pkgs.zig
+    pkgs.tmux
   ];
 }

@@ -142,6 +142,8 @@
      mako # notification system developed by swaywm maintainer
   ];
 
+  fonts.packages = with pkgs; [ nerdfonts ];
+
   networking.hostName = "D37T4-D35KT0P";
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
