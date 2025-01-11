@@ -139,8 +139,8 @@
 
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch --flake .#desktop";
-      uupdate = "home-manager switch --flake .#delta@desktop";
+      update = "cd ~/Documents/nix-config && sudo nixos-rebuild switch --flake .#desktop";
+      uupdate = "cd ~/Documents/nix-configs && home-manager switch --flake .#delta@desktop";
     };
     oh-my-zsh = {
       enable = true;
