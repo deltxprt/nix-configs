@@ -20,5 +20,6 @@
     pkgs.tmux
     pkgs.youtube-music
     pkgs.discord
+    pkgs.unzip
   ];
 }
