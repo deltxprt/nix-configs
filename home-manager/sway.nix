@@ -9,8 +9,9 @@
       terminal = "kitty"; 
       menu = "wofi --show run";
       bars = [{
-        fonts.size = 12.0;
-        position = "bottom";
+        swaybar_command waybar
+#        fonts.size = 12.0;
+#        position = "bottom";
       }];
       startup = [
         # Launch Firefox on start
