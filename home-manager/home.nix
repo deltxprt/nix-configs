@@ -20,6 +20,8 @@
     ./zsh.nix
     ./kitty.nix
     ./sway.nix
+    ./tmux.nix
+    ./streamdeck.nix
   ];
 
   nix = {

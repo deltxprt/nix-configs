@@ -16,12 +16,12 @@
     allowRename = false;
     automaticRename = false;
     paneBaseIndex = 1;
-    statusKeys = nvim;
+    statusKeys = "nvim";
 
     setTitles = true;
     setTitlesString = "#I:#W";
 
-    plugins = with.pkgs; [];
+#    plugins = with.pkgs; [];
 
     extraConfig = ''
       set-option -g default-terminal "tmux-256color" 

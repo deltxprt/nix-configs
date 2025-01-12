@@ -13,10 +13,15 @@
 #        fonts.size = 12.0;
 #        position = "bottom";
       }];
+#      execAlways = [
+#        {command = "swaybg -i ~/.config/backgrounds/landscape01.jpg";}
+
+#      ];
       startup = [
-        {command = "swaybg -i ~/.config/backgrounds/landscape01.jpg"}
+        {command = "swaybg -m fill -i ~/.config/backgrounds/landscape02.jpg"; always=true;}
         # Launch Firefox on start
         {command = "brave";}
+
       ];
       keybindings = lib.mkOptionDefault {
         "Mod4+Shift+XF86AudioMute" =  "exec 'bash /home/delta/.config/scripts/audio_switch.sh'"; # switch audio source

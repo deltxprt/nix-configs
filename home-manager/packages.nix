@@ -23,5 +23,6 @@
     pkgs.unzip
     pkgs.thefuck
     pkgs.swaybg
+    pkgs.manix
   ];
 }
