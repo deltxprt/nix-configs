@@ -18,10 +18,14 @@
         {command = "brave";}
       ];
       keybindings = lib.mkOptionDefault {
-        "Shift+XF86AudioMute" =  "exec ./scripts/audio_switch.sh";
-        "XF86AudioRaiseVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ +5%'";
-        "XF86AudioLowerVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ -5%'";
-        "XF86AudioMute"= "exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'";
+        "Shift+XF86AudioMute" =  "exec ./scripts/audio_switch.sh"; # switch audio source
+        "XF86AudioRaiseVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ +5%'"; # raise volume
+        "XF86AudioLowerVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ -5%'"; # lower volume
+        "XF86AudioMute"= "exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'"; # mute volume
+        "XF86AudioPlay" = "exec 'playerctl play-pause'"; # play pause music
+        "XF86AudioPause" = "exec 'playerctl play-pause'"; # play pause music
+        "XF86AudioNext" = "exec 'playerctl next'"; # next song
+        "XF86AudioPrev" = "exec 'playerctl previous'"; # previous song
       };
     };
   };
