@@ -18,7 +18,7 @@
         {command = "brave";}
       ];
       keybindings = lib.mkOptionDefault {
-        "Shift+XF86AudioMute" =  "exec /home/delta/.config/scripts/audio_switch.sh"; # switch audio source
+        "Mod4+Shift+XF86AudioMute" =  "exec '/bin/bash /home/delta/.config/scripts/audio_switch.sh'"; # switch audio source
         "XF86AudioRaiseVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ +5%'"; # raise volume
         "XF86AudioLowerVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ -5%'"; # lower volume
         "XF86AudioMute"= "exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'"; # mute volume
