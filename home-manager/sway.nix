@@ -6,7 +6,7 @@
     config = rec {
       modifier = "Mod4";
       # Use kitty as default terminal
-      terminal = "kitty"; 
+      terminal = "kitty tmux"; 
       menu = "wofi --show run";
       bars = [{
          command = "waybar";
@@ -14,6 +14,7 @@
 #        position = "bottom";
       }];
       startup = [
+        {command = "swaybg -i ~/.config/backgrounds/landscape01.jpg"}
         # Launch Firefox on start
         {command = "brave";}
       ];
