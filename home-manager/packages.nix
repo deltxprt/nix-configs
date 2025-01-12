@@ -23,6 +23,5 @@
     pkgs.unzip
     pkgs.thefuck
     pkgs.swaybg
-    pkgs.playerctl
   ];
 }
