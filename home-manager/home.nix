@@ -50,7 +50,14 @@
   home = {
     username = "delta";
     homeDirectory = "/home/delta";
+    pointerCursor = {
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
+      size = 20;
+    };
   };
+
+
 
   programs.git = {
     enable = true;
