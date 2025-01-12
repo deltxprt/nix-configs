@@ -9,17 +9,8 @@
     newSession = true;
     escapeTime = 0;
     historyLimit = 20000;
-#    bufferLimit = 20;
-#    displayTime = 1500;
-#    remainOnExit = false;
-#    repeatTime = 300;
-#    allowRename = false;
-#    automaticRename = false;
-#    paneBaseIndex = 1;
     keyMode = "vi";
 
-#    setTitles = true;
-#    setTitlesString = "#I:#W";
 
 #    plugins = with.pkgs; [];
 

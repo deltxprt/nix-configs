@@ -13,6 +13,7 @@
     pkgs.polybar
     pkgs.wofi
     pkgs.waybar
+    pkgs.rustup
     pkgs.go
     pkgs.nodejs_22
     pkgs.libgcc
@@ -24,6 +25,6 @@
     pkgs.thefuck
     pkgs.swaybg
     pkgs.manix
-    streamdeck-ui
+    pkgs.streamdeck-ui
   ];
 }
