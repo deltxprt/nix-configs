@@ -21,5 +21,7 @@
     pkgs.youtube-music
     pkgs.discord
     pkgs.unzip
+    pkgs.thefuck
+    pkgs.swaybg
   ];
 }
