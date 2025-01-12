@@ -18,5 +18,7 @@
     pkgs.libgcc
     pkgs.zig
     pkgs.tmux
+    pkgs.youtube-music
+    pkgs.discord
   ];
 }
