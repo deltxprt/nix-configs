@@ -9,7 +9,7 @@
 
     shellAliases = {
       ll = "ls -l";
-      update = "cd ~/Documents/nix-config && sudo nixos-rebuild switch --flake .#desktop";
+      update = "cd ~/Documents/nix-configs && sudo nixos-rebuild switch --flake .#desktop";
       uupdate = "cd ~/Documents/nix-configs && home-manager switch --flake .#delta@desktop";
     };
     oh-my-zsh = {
