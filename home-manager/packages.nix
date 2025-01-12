@@ -24,5 +24,6 @@
     pkgs.thefuck
     pkgs.swaybg
     pkgs.manix
+    streamdeck-ui
   ];
 }
