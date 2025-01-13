@@ -1,5 +1,24 @@
 { lib, ... }:
 {
+
+  programs.wofi = {
+    enable = true;
+    settings = {
+     show="drun";
+     width=750;
+     height=400;
+     always_parse_args=true;
+     show_all=false;
+     term="kitty";
+     hide_scroll=true;
+     print_command=true;
+     insensitive=true;
+     prompt="Search";
+     columns=2;
+     theme="mocha";
+    };
+    style = "./wofi/style.css";
+  };
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
@@ -7,7 +26,7 @@
       modifier = "Mod4";
       # Use kitty as default terminal
       terminal = "kitty tmux"; 
-      menu = "wofi --show run";
+      menu = "wofi --show drun";
       bars = [{
          command = "waybar";
 #        fonts.size = 12.0;
@@ -21,8 +40,8 @@
         {command = "swaybg -m fill -i ~/.config/backgrounds/landscape02.jpg"; always=true;}
         # Launch Firefox on start
         {command = "brave";}
-
       ];
+      
       keybindings = lib.mkOptionDefault {
         "Mod4+Shift+XF86AudioMute" =  "exec 'bash /home/delta/.config/scripts/audio_switch.sh'"; # switch audio source
         "XF86AudioRaiseVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ +5%'"; # raise volume

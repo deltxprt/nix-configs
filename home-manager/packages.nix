@@ -12,10 +12,12 @@
     pkgs.ntfy-sh
     pkgs.polybar
     pkgs.wofi
+    pkgs.rofi-wayland
     pkgs.waybar
     pkgs.rustup
     pkgs.go
     pkgs.nodejs_22
+    pkgs.gcc
     pkgs.libgcc
     pkgs.zig
     pkgs.tmux
