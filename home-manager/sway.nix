@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ config, lib, ... }:
 {
 
   programs.wofi = {
@@ -17,7 +17,64 @@
      columns=2;
      theme="mocha";
     };
-    style = "./wofi/style.css";
+    style = ''
+
+    * {
+	font-family: "Hack", monospace;
+}
+
+window {
+	background-color: transparent;
+}
+
+#input {
+	margin: 5px;
+  border: 1px #626880;
+  border-style: solid;
+	border-radius: 10px;
+	background-color: #303446;
+	color: #c6d0f5;
+  outline-color: #303446;
+}
+
+#input:focus {
+  box-shadow: rgba(239, 159, 118, 0.4) 0px 0px 0px 2px, rgba(239, 159, 118, 0.65) 0px 4px 6px -1px, rgba(239, 159, 118, 0.08) 0px 1px 0px inset;
+}
+
+/* #inner-box { */
+/* 	background-color: #303446; */
+/* } */
+
+#outer-box {
+	margin: 2px;
+	padding: 10px;
+  border: 1px #626880;
+  border-style: solid;
+  border-radius: 20px;
+	background-color: #303446;
+}
+
+#scroll {
+	margin: 5px;
+}
+
+#text {
+	padding: 4px;
+	color: #c6d0f5;
+}
+
+#entry:nth-child(even){
+	background-color: #3C4053;
+}
+
+#entry:selected {
+	background-color: #626880;
+}
+
+#text:selected {
+	background: transparent;
+}
+  '';
   };
   wayland.windowManager.sway = {
     enable = true;
@@ -41,7 +98,14 @@
         # Launch Firefox on start
         {command = "brave";}
       ];
-      
+      output = {
+        DP-1 = {
+          pos = "-2560 -750";
+        };
+        DP-2 = {
+          pos = "0 0";
+        };
+      };
       keybindings = lib.mkOptionDefault {
         "Mod4+Shift+XF86AudioMute" =  "exec 'bash /home/delta/.config/scripts/audio_switch.sh'"; # switch audio source
         "XF86AudioRaiseVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ +5%'"; # raise volume
