@@ -15,15 +15,15 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
 
+  boot.loader.timeout = 10;
+
   #Enable GRUB
   boot.loader.grub = {
     enable = true;
-    version = 2;
     device = "nodev";
     efiSupport = true;
     useOSProber = true;
     default = 0;
-    timeout = 10;
     theme = pkgs.stdenv.mkDerivation {
       pname = "distro-grub-themes";
       version = "3.1";
@@ -100,14 +100,14 @@
   # Enable the X11 windowing system.
   #services.xserver.enable = true;
 
+  service.libinput.enable = true;
+  services.displayManager.defaultSession = "cinnamon";
   services.xserver = {
 		enable = true;
-		libinput.enable = true;
 		displayManager.lightdm.enable = true;
 		desktopManager = {
 			cinnamon.enable = true;
 		};
-		displayManager.defaultSession = "cinnamon";
 	};
   #services.flatpak.enable = true;
 
