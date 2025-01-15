@@ -21,13 +21,10 @@
     libgcc
     zig
     tmux
-    youtube-music
-    discord
     unzip
     thefuck
     swaybg
     manix
-    streamdeck-ui
     lazygit
   ];
 }

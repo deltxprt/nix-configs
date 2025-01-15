@@ -43,13 +43,6 @@
     };
   };
 
-
-  home.packages = with pkgs; [
-    youtube-music
-    discord
-    streamdeck-ui
-  ];
-
   programs.git = {
     enable = true;
     userName = "deltxprt";

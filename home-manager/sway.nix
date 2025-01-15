@@ -100,11 +100,11 @@ window {
       ];
       output = {
         DP-1 = {
-          pos = "-2560 -750";
-          adaptive_sync = "on"
+          pos = "0 0";
+          adaptive_sync = "on";
         };
         DP-2 = {
-          pos = "0 0";
+          pos = "2560 750";
         };
       };
       keybindings = lib.mkOptionDefault {
