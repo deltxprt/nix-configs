@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configurationi-laptop.nix
+      ./hardware-configuration-laptop.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
