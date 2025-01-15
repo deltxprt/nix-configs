@@ -33,6 +33,11 @@
     allowUnfreePredicate = _: true;
   };
 
+  programs.zsh.shellAliases = {
+      update = "cd ~/Documents/nix-configs && sudo nixos-rebuild switch --flake .#laptop";
+      uupdate = "cd ~/Documents/nix-configs && home-manager switch --flake .#delta@laptop";
+  };
+
   home = {
     username = "delta";
     homeDirectory = "/home/delta";
