@@ -43,6 +43,10 @@
     };
   };
 
+  wayland.windowManager.sway.config.startup = [
+    {command = "swaybg -m fill -i ~/.config/backgrounds/landscape01.jpg"; always=true;}
+  ];
+
   programs.git = {
     enable = true;
     userName = "deltxprt";

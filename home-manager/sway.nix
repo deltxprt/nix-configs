@@ -94,19 +94,9 @@ window {
 
 #      ];
       startup = [
-        {command = "swaybg -m fill -i ~/.config/backgrounds/landscape02.jpg"; always=true;}
         # Launch Firefox on start
         {command = "brave";}
       ];
-      output = {
-        DP-1 = {
-          pos = "0 0";
-          adaptive_sync = "on";
-        };
-        DP-2 = {
-          pos = "2560 750";
-        };
-      };
       keybindings = lib.mkOptionDefault {
         "Mod4+Shift+XF86AudioMute" =  "exec 'bash /home/delta/.config/scripts/audio_switch.sh'"; # switch audio source
         "XF86AudioRaiseVolume" = "exec 'pactl set-sink-volume @DEFAULT_SINK@ +5%'"; # raise volume

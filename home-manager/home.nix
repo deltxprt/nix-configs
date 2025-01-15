@@ -50,6 +50,20 @@
     streamdeck-ui
   ];
 
+  wayland.windowManager.sway.config.output = {
+    DP-1 = {
+      pos = "0 0";
+      adaptive_sync = "on";
+    };
+    DP-2 = {
+      pos = "2560 750";
+    };
+  };
+
+  wayland.windowManager.sway.config.startup = [
+    {command = "swaybg -m fill -i ~/.config/backgrounds/landscape02.jpg"; always=true;}
+  ];
+
   programs.git = {
     enable = true;
     userName = "deltxprt";
