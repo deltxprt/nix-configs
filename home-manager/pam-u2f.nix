@@ -24,7 +24,7 @@ in
       ACTION=="remove", SUBSYSTEM=="usb", ENV{PRODUCT}=="1050/406/543", RUN+="${ykDisconnect} '%E{SEQNUM}'"
     '';
 
-    home-manager.users.cole =
+    home-manager.users.delta =
       { pkgs, ... }:
       {
         xdg.configFile."Yubico/u2f_keys".text = mapping;
