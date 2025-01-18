@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./pam-u2f.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -164,6 +165,7 @@
      wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
      mako # notification system developed by swaywm maintainer
      playerctl
+     pam_u2f
   ];
 
   fonts.packages = with pkgs; [ nerdfonts ];
