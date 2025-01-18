@@ -21,7 +21,6 @@
     ./kitty.nix
     ./sway.nix
     ./tmux.nix
-    ./pam-u2f.nix
   ];
 
   nix = {
