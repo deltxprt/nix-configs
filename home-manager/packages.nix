@@ -26,5 +26,6 @@
     swaybg
     manix
     lazygit
+    postman
   ];
 }
