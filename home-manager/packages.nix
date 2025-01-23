@@ -27,5 +27,7 @@
     manix
     lazygit
     postman
+    podman
+    podman-desktop
   ];
 }
