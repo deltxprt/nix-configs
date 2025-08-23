@@ -115,10 +115,10 @@
         };
         lightdm.enable = true;
         defaultSession = "cinnamon";
-		  };
-      videoDrivers = ["nvidia"];
-	  }
-  ];
+        videoDrivers = ["nvidia"];
+	    }
+    ];
+  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
