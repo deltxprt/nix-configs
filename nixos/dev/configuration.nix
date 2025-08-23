@@ -148,7 +148,12 @@
   #     tree
   #   ];
   # };
-
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+  security.polkit.enable = true;
   programs.firefox.enable = true;
 
   # List packages installed in system profile. To search, run:
@@ -199,6 +204,17 @@
       PasswordAuthentication = false;
     };
   };
+  systemd.user.services.wayvnc = {
+    description = "WayVNC (Sway Wayland VNC server)";
+    after = [ "graphical-session.target" ];
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig = {
+      # Use --output <name> if you want a specific monitor (see: swaymsg -t get_outputs)
+      ExecStart = "${pkgs.wayvnc}/bin/wayvnc --address 0.0.0.0 5900 --max-fps 60 --render-cursor always";
+      Restart = "on-failure";
+      Environment = "XDG_SESSION_TYPE=wayland";
+    };
+  };
 
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -243,7 +259,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
