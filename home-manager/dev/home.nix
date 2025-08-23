@@ -53,9 +53,9 @@
   wayland.windowManager.sway.config = {
     output = {
       HEADLESS-1 = {
-        mode = "3840x2160@60Hz";
+        mode = "3840x2160@120Hz";
         pos = "0 0";
-        scale = 1;
+        scale = "1";
       };
     };
     startup = [
