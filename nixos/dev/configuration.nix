@@ -224,8 +224,6 @@
     enable = true;
     enableSSHSupport = true;
   };
-
-  security.polkit.enable = true;
   security.pam.services.swaylock = {};
 
   systemd.user.services.kanshi = {
