@@ -35,8 +35,8 @@
   };
 
   programs.zsh.shellAliases = {
-      update = "cd ~/Documents/nix-configs && sudo nixos-rebuild switch --flake .#desktop";
-      uupdate = "cd ~/Documents/nix-configs && home-manager switch --flake .#delta@desktop";
+      update = "cd ~/nix-configs && sudo nixos-rebuild switch --flake .#dev";
+      uupdate = "cd ~/nix-configs && home-manager switch --flake .#delta@dev";
   };
 
   home = {
@@ -50,11 +50,6 @@
   };
 
 
-  home.packages = with pkgs; [
-    youtube-music
-    discord
-    streamdeck-ui
-  ];
 
   wayland.windowManager.sway.config.output = {
     DP-1 = {
