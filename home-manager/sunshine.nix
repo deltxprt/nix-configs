@@ -11,8 +11,6 @@
 
   hardware.uinput.enable = true;
 
-  environment.systemPackages = [ pkgs.sunshine pkgs.ffmpeg-full ];
-
   systemd.user.services.sunshine = {
     description = "Sunshine Host";
     after = [ "graphical-session.target" ];

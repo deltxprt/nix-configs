@@ -159,6 +159,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+     sunshine
+     ffmpeg-full
      python3
      home-manager
      wget
