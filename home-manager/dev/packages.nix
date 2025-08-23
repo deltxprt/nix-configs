@@ -5,5 +5,6 @@
     asdf-vm
     zoxide
     delta
+    bun
   ];
 }
