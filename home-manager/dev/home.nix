@@ -15,12 +15,14 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ./packages.nix
-    ./waybar.nix
-    ./zsh.nix
-    ./kitty.nix
-    ./sway.nix
-    ./tmux.nix
+    ../packages.nix
+    ../waybar.nix
+    ../zsh.nix
+    ../kitty.nix
+    ../sway.nix
+    ../tmux.nix
+    ../pam-u2f.nix
+    ../sunshine.nix
   ];
 
   nix = {
@@ -34,8 +36,8 @@
   };
 
   programs.zsh.shellAliases = {
-      update = "cd ~/Documents/nix-configs && sudo nixos-rebuild switch --flake .#laptop";
-      uupdate = "cd ~/Documents/nix-configs && home-manager switch --flake .#delta@laptop";
+      update = "cd ~/Documents/nix-configs && sudo nixos-rebuild switch --flake .#desktop";
+      uupdate = "cd ~/Documents/nix-configs && home-manager switch --flake .#delta@desktop";
   };
 
   home = {
@@ -48,8 +50,25 @@
     };
   };
 
+
+  home.packages = with pkgs; [
+    youtube-music
+    discord
+    streamdeck-ui
+  ];
+
+  wayland.windowManager.sway.config.output = {
+    DP-1 = {
+      pos = "0 0";
+      adaptive_sync = "on";
+    };
+    DP-2 = {
+      pos = "2560 750";
+    };
+  };
+
   wayland.windowManager.sway.config.startup = [
-    {command = "swaybg -m fill -i ~/.config/backgrounds/landscape01.jpg"; always=true;}
+    {command = "swaybg -m fill -i ~/.config/backgrounds/landscape02.jpg"; always=true;}
   ];
 
   programs.git = {

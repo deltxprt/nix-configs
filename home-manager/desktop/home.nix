@@ -15,13 +15,13 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ./packages.nix
-    ./waybar.nix
-    ./zsh.nix
-    ./kitty.nix
-    ./sway.nix
-    ./tmux.nix
-    ./pam-u2f.nix
+    ../packages.nix
+    ../waybar.nix
+    ../zsh.nix
+    ../kitty.nix
+    ../sway.nix
+    ../tmux.nix
+    ../pam-u2f.nix
   ];
 
   nix = {

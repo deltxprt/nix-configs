@@ -159,8 +159,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wayvnc
      python3
      home-manager
      wget
@@ -175,7 +173,7 @@
 
   fonts.packages = with pkgs; [ nerd-fonts.fira-code nerd-fonts.fira-mono nerd-fonts.jetbrains-mono ];
 
-  networking.hostName = "D37T4-D35KT0P";
+  networking.hostName = "D37T4-D3VM4CH1N3";
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   programs.zsh.enable = true;
@@ -238,18 +236,6 @@
       };                                                                   
     };                                                                     
   };
-  systemd.user.services.wayvnc = {
-      description = "WayVNC (Sway)";
-      wantedBy = [ "sway-session.target" ];
-      after = [ "sway-session.target" ];
-      serviceConfig = {
-        # Ensure runtime dir exists in the service env
-        Environment = "XDG_RUNTIME_DIR=%t";
-        ExecStart = "${pkgs.wayvnc}/bin/wayvnc --gpu 0.0.0.0";
-        Restart = "on-failure";
-      };
-    };
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
