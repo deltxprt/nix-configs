@@ -178,7 +178,7 @@
         features = "decorations";
       };
       
-      'delta "decorations"' = {
+      delta.decorations = {
         commit-decorations-style = "bold yellow box";
         file-style = "bold yellow";
         hunk-header-style = "line-number synthax";
