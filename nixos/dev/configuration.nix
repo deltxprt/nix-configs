@@ -200,7 +200,7 @@
     ];
     fontconfig = {
       enable = true;
-      defaultFonts.monospace = [ "FiraCode Nerd Font Mono" "FiraCode Nerd Font"]
+      defaultFonts.monospace = [ "FiraCode Nerd Font Mono" "FiraCode Nerd Font"];
     };
   };
 
