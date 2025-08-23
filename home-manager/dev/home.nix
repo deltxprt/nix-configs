@@ -50,9 +50,18 @@
   };
 
 
-  wayland.windowManager.sway.config.startup = [
-    {command = "swaybg -m fill -i ~/.config/backgrounds/landscape02.jpg"; always=true;}
-  ];
+  wayland.windowManager.sway.config = {
+    output = {
+      HEADLESS-1 = {
+        mode = "3840x2160@60Hz";
+        pos = "0 0";
+        scale = 1;
+      }
+    };
+    startup = [
+      {command = "swaybg -m fill -i ~/.config/backgrounds/landscape02.jpg"; always=true;}
+    ];
+  };
 
   programs.git = {
     enable = true;
@@ -62,11 +71,6 @@
 
   # Enable home-manager 
   programs.home-manager.enable = true;
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
-
 
   services.gnome-keyring.enable = true;
 

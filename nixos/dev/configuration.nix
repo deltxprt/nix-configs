@@ -138,6 +138,14 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+    extraConfig = ''
+      exec_always "swaymsg create_output
+      output HEADLESS-1 {
+        mode 3840x2160@60Hz
+        pos 0 0
+        scale 1
+      }
+    '';
     extraOptions = [ "--unsupported-gpu" ];
     extraSessionCommands = ''
       export WLR_NO_HARDWARE_CURSOR=1
