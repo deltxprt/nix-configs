@@ -104,8 +104,7 @@
   services.xserver = {
 		enable = true;
 		libinput.enable = true;
-		displayManager.lightdm.enable = true;
-		desktopManager = {
+		displayManager = {
       session = {
         name = "Sway (unsupported-gpu)";
         manage = "desktop";
@@ -113,9 +112,10 @@
           exec ${pkgs.sway}/bin/sway --unsupported-gpu
         '';
       };
+      lightdm.enable = true;
 			cinnamon.enable = false;
+      defaultSession = "cinnamon";
 		};
-		displayManager.defaultSession = "cinnamon";
     videoDrivers = ["nvidia"];
 	};
 
