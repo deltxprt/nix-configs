@@ -22,6 +22,7 @@
     ../sway.nix
     ../tmux.nix
     ../pam-u2f.nix
+    ./packages.nix
   ];
 
   nix = {
