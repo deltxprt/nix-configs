@@ -160,6 +160,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     wayvnc
      python3
      home-manager
      wget
@@ -172,7 +173,7 @@
      pam_u2f
   ];
 
-  fonts.packages = with pkgs; [ nerd-fonts.fira-code ];
+  fonts.packages = with pkgs; [ nerd-fonts.fira-code nerd-fonts.fira-mono nerd-fonts.jetbrains-mono ];
 
   networking.hostName = "D37T4-D35KT0P";
 
@@ -204,17 +205,6 @@
       PasswordAuthentication = false;
     };
   };
-  systemd.user.services.wayvnc = {
-    description = "WayVNC (Sway Wayland VNC server)";
-    after = [ "graphical-session.target" ];
-    wantedBy = [ "graphical-session.target" ];
-    serviceConfig = {
-      # Use --output <name> if you want a specific monitor (see: swaymsg -t get_outputs)
-      ExecStart = "${pkgs.wayvnc}/bin/wayvnc --address 0.0.0.0 5900 --max-fps 60 --render-cursor always";
-      Restart = "on-failure";
-      Environment = "XDG_SESSION_TYPE=wayland";
-    };
-  };
 
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -223,6 +213,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+
   };
   security.pam.services.swaylock = {};
 
@@ -247,6 +238,17 @@
       };                                                                   
     };                                                                     
   };
+  systemd.user.services.wayvnc = {
+      description = "WayVNC (Sway)";
+      wantedBy = [ "sway-session.target" ];
+      after = [ "sway-session.target" ];
+      serviceConfig = {
+        # Ensure runtime dir exists in the service env
+        Environment = "XDG_RUNTIME_DIR=%t";
+        ExecStart = "${pkgs.wayvnc}/bin/wayvnc --gpu 0.0.0.0";
+        Restart = "on-failure";
+      };
+    };
 
   # List services that you want to enable:
 
