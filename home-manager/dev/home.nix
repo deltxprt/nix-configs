@@ -69,7 +69,7 @@
     userName = "deltxprt";
     userEmail = "vincent.genest@protonmail.com";
     signing = {
-      key = "";
+      key = "611456C0F4E02BC7";
       signByDefault = true;
     };
     extraConfig = {
@@ -162,7 +162,7 @@
         blame = { highlightRecent = "black bold,1 year ago, white, 1 month ago, default, 7 days ago, blue"; };
         branch = { current = "magenta"; local = "default"; remote = "yellow"; upstream = "green"; plain = "blue";};
         diff = { meta = "black bold"; frag = "magenta"; context = "white"; whitespace = "yellow reverse"; old = "red"; };
-        deocrate = { HEAD = "red"; branch = "blue"; tag = "yellow"; remoteBranch = "magenta"; };
+        decorate = { HEAD = "red"; branch = "blue"; tag = "yellow"; remoteBranch = "magenta"; };
       };
 
       interactive = { 
