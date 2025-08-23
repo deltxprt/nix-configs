@@ -102,10 +102,9 @@
 
   #services.flatpak.enable = true;
   services.xserver = {
-		enable = true;
+		enable = false;
 		libinput.enable = true;
 		displayManager = {
-      lightdm.enable = true;
       defaultSession = "cinnamon";
 #      session = [
 #        {
@@ -149,7 +148,7 @@
   };
 
   # Enable sound.
-  hardware.pulseaudio.enable = false;
+  service.pulseaudio.enable = false;
   # OR
   # services.pipewire = {
   #   enable = true;
@@ -215,7 +214,7 @@
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {
-    enable = true;
+    enable = false;
     settings = {
       # Opinionated: forbid root login through SSH.
       PermitRootLogin = "no";
@@ -252,7 +251,8 @@
     enable = true;                                                         
     settings = {                                                           
       default_session = {                                                  
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        #command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        command = "${pkgs.sway}/bin/sway --unsupported-gpu";
         user = "delta";                                                  
       };                                                                   
     };                                                                     
