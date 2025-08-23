@@ -4,5 +4,6 @@
     asdf
     asdf-vm
     zoxide
+    delta
   ];
 }
