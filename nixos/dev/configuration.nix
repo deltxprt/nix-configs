@@ -105,6 +105,7 @@
 		enable = true;
 		libinput.enable = true;
 		displayManager = {
+      lightdm.enable = true;
       session = [
         {
           name = "Sway (unsupported-gpu)";
@@ -115,7 +116,9 @@
         }
       ];
     };
-    lightdm.enable = true;
+    desktopManager = {
+      cinnamon.enable = true; 
+    };
     defaultSession = "cinnamon";
     videoDrivers = ["nvidia"];
   };
