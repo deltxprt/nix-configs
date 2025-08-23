@@ -114,10 +114,10 @@
           '';
         }
       ];
-      lightdm.enable = true;
-      defaultSession = "cinnamon";
-      videoDrivers = ["nvidia"];
-	  };
+    };
+    lightdm.enable = true;
+    defaultSession = "cinnamon";
+    videoDrivers = ["nvidia"];
   };
 
   # Configure keymap in X11
