@@ -206,7 +206,7 @@
       initialPassword = "correcthorsebatterystaple";
       isNormalUser = true;
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel" "video"];
+      extraGroups = ["wheel" "video" "uinput" "input", "render"];
       shell = pkgs.zsh;
     };
   };
@@ -281,6 +281,10 @@
       Restart = "on-failure";
     };
   };
+
+  services.udev.extraRules = ''
+    KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"
+  '';
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
