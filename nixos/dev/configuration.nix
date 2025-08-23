@@ -104,19 +104,21 @@
   services.xserver = {
 		enable = true;
 		libinput.enable = true;
-		displayManager = {
-      session = {
-        name = "Sway (unsupported-gpu)";
-        manage = "desktop";
-        start = ''
-          exec ${pkgs.sway}/bin/sway --unsupported-gpu
-        '';
-      };
-      lightdm.enable = true;
-      defaultSession = "cinnamon";
-		};
-    videoDrivers = ["nvidia"];
-	};
+		displayManager = [
+      {
+        session = {
+          name = "Sway (unsupported-gpu)";
+          manage = "desktop";
+          start = ''
+            exec ${pkgs.sway}/bin/sway --unsupported-gpu
+          '';
+        };
+        lightdm.enable = true;
+        defaultSession = "cinnamon";
+		  };
+      videoDrivers = ["nvidia"];
+	  }
+  ];
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
