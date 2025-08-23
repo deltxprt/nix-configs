@@ -194,11 +194,11 @@
 
   fonts = {
     packages = with pkgs; [ 
-      nerd-fonts = [
+      nerd-fonts = {
         fira-code
         fira-mono 
         jetbrains-mono 
-      ];
+      };
     ];
     fontconfig = {
       enable = true;
