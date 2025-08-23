@@ -109,6 +109,7 @@
 			cinnamon.enable = true;
 		};
 		displayManager.defaultSession = "cinnamon";
+    videoDrivers = ["nvidia"];
 	};
 
   # Configure keymap in X11
@@ -238,6 +239,20 @@
       };                                                                   
     };                                                                     
   };
+
+  environment.sessionVariables.WLR_NO_HARDWARE_CURSOR = "1";
+
+  hardware.graphics = {
+    enable = true;
+  };
+  hardware.nvidia = {
+    modsetting.enable = true;
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    nvidiaSettings = true;
+  };
+
+  hardware.uinput.enable = true;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
