@@ -3,7 +3,7 @@
   programs.kitty = lib.mkForce {
     enable = true;
     font = {
-      name = "FiraCode Nerd Font";
+      name = "FiraCode Nerd Font Mono";
       size = 10;
     };
     themeFile = "Catppuccin-Mocha";

@@ -192,7 +192,19 @@
      pam_u2f
   ];
 
-  fonts.packages = with pkgs; [ nerd-fonts.fira-code nerd-fonts.fira-mono nerd-fonts.jetbrains-mono ];
+  fonts = {
+    packages = with pkgs; [ 
+      nerd-fonts = [
+        fira-code
+        fira-mono 
+        jetbrains-mono 
+      ];
+    ];
+    fontconfig = {
+      enable = true;
+      defaultFonts.monospace = [ "FiraCode Nerd Font Mono" "FiraCode Nerd Font"]
+    };
+  };
 
   networking.hostName = "D37T4-D3VM4CH1N3";
 
