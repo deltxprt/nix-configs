@@ -106,7 +106,14 @@
 		libinput.enable = true;
 		displayManager.lightdm.enable = true;
 		desktopManager = {
-			cinnamon.enable = true;
+      session = {
+        name = "Sway (unsupported-gpu)";
+        manage = "desktop";
+        start = ''
+          exec ${pkgs.sway}/bin/sway --unsupported-gpu
+        '';
+      };
+			cinnamon.enable = false;
 		};
 		displayManager.defaultSession = "cinnamon";
     videoDrivers = ["nvidia"];
@@ -242,7 +249,7 @@
     settings = {                                                           
       default_session = {                                                  
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "greeter";                                                  
+        user = "delta";                                                  
       };                                                                   
     };                                                                     
   };
