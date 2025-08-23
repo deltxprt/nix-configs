@@ -113,7 +113,6 @@
         '';
       };
       lightdm.enable = true;
-			cinnamon.enable = false;
       defaultSession = "cinnamon";
 		};
     videoDrivers = ["nvidia"];
