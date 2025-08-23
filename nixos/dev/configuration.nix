@@ -253,6 +253,17 @@
   };
 
   hardware.uinput.enable = true;
+
+  systemd.user.services.sunshine = {
+    description = "Sunshine Host";
+    after = [ "graphical-session.target" ];
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig = {
+      Environment = "XDG_SESSION_TYPE=wayland";
+      ExecStart = "${pkgs.sunshine}/bin/sunshine";
+      Restart = "on-failure";
+    };
+  };
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
