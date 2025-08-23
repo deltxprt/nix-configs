@@ -206,7 +206,7 @@
       initialPassword = "correcthorsebatterystaple";
       isNormalUser = true;
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel" "video" "uinput" "input", "render"];
+      extraGroups = ["wheel" "video" "uinput" "input" "render"];
       shell = pkgs.zsh;
     };
   };
