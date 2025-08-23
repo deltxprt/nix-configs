@@ -177,7 +177,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     wlr
+     wlr-randr
      sunshine
      ffmpeg-full
      python3
