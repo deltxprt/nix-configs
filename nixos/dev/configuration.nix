@@ -118,8 +118,8 @@
     };
     desktopManager = {
       cinnamon.enable = true; 
+      defaultSession = "cinnamon";
     };
-    defaultSession = "cinnamon";
     videoDrivers = ["nvidia"];
   };
 
