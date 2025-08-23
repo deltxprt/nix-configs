@@ -129,6 +129,12 @@
     enable = true;
     wrapperFeatures.gtk = true;
     extraOptions = [ "--unsupported-gpu" ];
+    extraSessionCommands = ''
+      export WLR_NO_HARDWARE_CURSOR=1
+      export GBM_BACKEND=nvidia-drm
+      export WLR_RENDERER=vulkan
+      export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    '';
   };
 
   # Enable sound.
@@ -241,8 +247,6 @@
     };                                                                     
   };
 
-  environment.sessionVariables.WLR_NO_HARDWARE_CURSOR = "1";
-
   hardware.graphics = {
     enable = true;
   };
@@ -251,6 +255,7 @@
     open = false;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     nvidiaSettings = true;
+    powerManagement.enable = true;
   };
 
   hardware.uinput.enable = true;
