@@ -56,7 +56,7 @@
         mode = "3840x2160@60Hz";
         pos = "0 0";
         scale = 1;
-      }
+      };
     };
     startup = [
       {command = "swaybg -m fill -i ~/.config/backgrounds/landscape02.jpg"; always=true;}
