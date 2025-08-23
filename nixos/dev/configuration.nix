@@ -138,9 +138,6 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    extraConfig = ''
-      exec_always "swaymsg create_output"
-    '';
     extraOptions = [ "--unsupported-gpu" ];
     extraSessionCommands = ''
       export WLR_NO_HARDWARE_CURSOR=1
