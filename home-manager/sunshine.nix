@@ -12,6 +12,5 @@
     };
   };
 
-  users.users.delta.extraGroups = [ "input" "video" "render" ];
 
 }
