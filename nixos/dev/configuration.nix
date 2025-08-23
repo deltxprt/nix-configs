@@ -167,7 +167,7 @@
      pam_u2f
   ];
 
-  fonts.packages = with pkgs; [ nerdfonts ];
+  fonts.packages = with pkgs; [ nerd-fonts.fira-code-mono nerd-fonts.fira-code ];
 
   networking.hostName = "D37T4-D35KT0P";
 
