@@ -139,12 +139,7 @@
     enable = true;
     wrapperFeatures.gtk = true;
     extraConfig = ''
-      exec_always "swaymsg create_output
-      output HEADLESS-1 {
-        mode 3840x2160@60Hz
-        pos 0 0
-        scale 1
-      }
+      exec_always "swaymsg create_output"
     '';
     extraOptions = [ "--unsupported-gpu" ];
     extraSessionCommands = ''
@@ -185,6 +180,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+     wlr
      sunshine
      ffmpeg-full
      python3
