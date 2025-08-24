@@ -38,6 +38,7 @@
   programs.zsh.shellAliases = {
       update = "cd ~/nix-configs && sudo nixos-rebuild switch --flake .#dev";
       uupdate = "cd ~/nix-configs && home-manager switch --flake .#delta@dev";
+      z = "zoxide";
   };
 
   home = {
