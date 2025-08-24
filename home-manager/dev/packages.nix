@@ -6,5 +6,6 @@
     zoxide
     delta
     bun
+    fzf
   ];
 }

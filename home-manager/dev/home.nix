@@ -40,6 +40,10 @@
       uupdate = "cd ~/nix-configs && home-manager switch --flake .#delta@dev";
   };
 
+  programs.fzf = {
+    enable = true;
+  }
+
   home = {
     username = "delta";
     homeDirectory = "/home/delta";
