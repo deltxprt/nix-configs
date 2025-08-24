@@ -42,7 +42,7 @@
 
   programs.fzf = {
     enable = true;
-  }
+  };
 
   home = {
     username = "delta";
