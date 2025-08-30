@@ -7,5 +7,6 @@
     delta
     bun
     fzf
+    jetbrains.rider
   ];
 }
