@@ -8,5 +8,6 @@
     bun
     fzf
     jetbrains.rider
+    synergy
   ];
 }
