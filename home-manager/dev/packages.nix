@@ -9,5 +9,6 @@
     fzf
     jetbrains.rider
     synergy
+    ripgrep
   ];
 }
