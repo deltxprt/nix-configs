@@ -17,14 +17,11 @@
     # ./nvim.nix
     ../packages.nix
     inputs.hydenix.homeModules.default
-    ../zsh.nix
-    ../kitty.nix
-    ../hyprland.nix
   ];
 
   nix = {
     package = pkgs.nix;
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.experimental-features = lib.mkForce [ "nix-command" "flakes" ];
   };
 
   nixpkgs.config = {
