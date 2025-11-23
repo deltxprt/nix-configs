@@ -119,11 +119,11 @@
 
   services.libinput.enable = true;
 #  services.displayManager.defaultSession = "hyprland";
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.xserver = {
-		enable = false;
-	};
+#  services.displayManager.sddm.wayland.enable = true;
+#  services.displayManager.sddm.enable = false;
+#  services.xserver = {
+#		enable = false;
+#	};
   services.flatpak.enable = true;
 
   # Configure keymap in X11
@@ -133,13 +133,13 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  # Enable sound.
-  services.pulseaudio.enable = false;
+#  programs.hyprland = {
+#    enable = true;
+#    xwayland.enable = true;
+#  };
+#
+#  # Enable sound.
+#  services.pulseaudio.enable = false;
   # OR
   # services.pipewire = {
   #   enable = true;
