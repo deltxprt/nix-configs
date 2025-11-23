@@ -15,4 +15,12 @@
     enable = true;
     enableZshIntegration = true;
   };
+ 
+  hydenix.hm.theme.active = "Peace Of Mind"
+
+  hydenix.hm.social.enable = false;
+  hydenix.hm.spotify.enable = false;
+  hydenix.hm.editors.neovim.enable = true;
+  hydenix.hm.editors.vscode.enable = true;
+
 }

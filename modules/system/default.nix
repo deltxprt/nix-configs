@@ -10,4 +10,6 @@
     # pkgs.vscode - hydenix's vscode version
     # pkgs.userPkgs.vscode - your personal nixpkgs version
   ];
+
+  hydenix.gaming.enable = false;
 }
