@@ -131,8 +131,6 @@
 
   programs.hyprland = {
     enable = true;
-    package = null;
-    portalPackage = null;
     xwayland.enable = true;
   };
 
