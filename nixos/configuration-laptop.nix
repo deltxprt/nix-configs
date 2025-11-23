@@ -118,7 +118,7 @@
   programs.hyprland.enable = true;
 
   # Enable sound.
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
   # OR
   # services.pipewire = {
   #   enable = true;
