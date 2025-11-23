@@ -106,7 +106,7 @@
 		enable = true;
 		displayManager.lightdm.enable = true;
 	};
-  #services.flatpak.enable = true;
+  services.flatpak.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -115,7 +115,7 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
  
-  programs.hyprland.enabled = true;
+  programs.hyprland.enable = true;
 
   # Enable sound.
   hardware.pulseaudio.enable = true;

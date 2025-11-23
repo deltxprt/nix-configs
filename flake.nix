@@ -39,7 +39,7 @@
         # > Our main nixos configuration file <
         modules = [./nixos/configuration-laptop.nix];
       };
-      
+
     };
 
     # Standalone home-manager configuration entrypoint
