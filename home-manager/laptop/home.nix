@@ -39,11 +39,11 @@
     homeDirectory = "/home/delta";
   };
 
-  programs.git = {
-    enable = true;
-    userName = "deltxprt";
-    userEmail = "vincent.genest@protonmail.com";
-  };
+#  programs.git = {
+#    enable = true;
+#    userName = "deltxprt";
+#    userEmail = "vincent.genest@protonmail.com";
+#  };
 
   # Enable home-manager
   programs.home-manager.enable = true;
