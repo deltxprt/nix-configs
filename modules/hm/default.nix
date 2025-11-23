@@ -9,4 +9,6 @@
   # hydenix home-manager options go here
   hydenix.hm.enable = true;
   # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
+
+  programs.yazi.enable = true;
 }

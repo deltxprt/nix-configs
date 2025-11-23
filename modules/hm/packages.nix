@@ -6,6 +6,7 @@
     stow
     neovim
     brave
+    librewolf
     localsend
     ntfy-sh
     rustup
