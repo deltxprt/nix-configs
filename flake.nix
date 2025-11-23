@@ -4,29 +4,10 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    hyprland.url = "github:hyprwm/Hyprland";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-  };
-
-  nixConfig = {
-    # Tell Nix where to look for binary caches
-    substituters = [
-   "https://cache.nixos.org"          # default
-   "https://hyprland.cachix.org"
-  ];
-
-    # Mark the cache as trusted (required for binary substitution)
-    trusted-substituters = [
-      "https://hyprland.cachix.org"
-    ];
-
-    # Public key that signs the cache’s binaries
-    trusted-public-keys = [
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-    ];
   };
 
   outputs = {
