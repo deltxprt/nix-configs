@@ -11,4 +11,8 @@
   # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
 
   programs.yazi.enable = true;
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }

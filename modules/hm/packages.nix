@@ -22,5 +22,6 @@
     postman
     podman
     podman-desktop
+    zoxide
   ];
 }
