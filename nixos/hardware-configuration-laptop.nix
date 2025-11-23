@@ -20,7 +20,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/E08A-D453";
+    { device = "/dev/disk/by-id/nvme-SAMSUNG_MZALQ256HBJD-00BL2_S65FNA0T195541-part1";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
