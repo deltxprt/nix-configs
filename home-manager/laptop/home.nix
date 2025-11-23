@@ -16,6 +16,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ../packages.nix
+    inputs.hydenix.homeModules.default
     ../zsh.nix
     ../kitty.nix
     ../hyprland.nix
@@ -55,6 +56,8 @@
     xwayland.enable = true;
     systemd.enable = true;
   };
+
+  hydenix.hm.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

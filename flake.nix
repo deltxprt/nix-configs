@@ -5,6 +5,17 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
+    hydenix = {
+      # Available inputs:
+      # Main: github:richen604/hydenix
+      # Commit: github:richen604/hydenix/<commit-hash>
+      # Version: github:richen604/hydenix/v1.0.0 - note the version may not be compatible with this template
+      url = "github:richen604/hydenix";
+
+      # uncomment the below if you know what you're doing, hydenix updates nixos-unstable every week or so
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";

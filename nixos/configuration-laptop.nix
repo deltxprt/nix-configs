@@ -68,6 +68,7 @@
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
+      inputs.hydenix.overlays.default
     ];
     # Configure your nixpkgs instance
     config = {
@@ -177,9 +178,18 @@
       initialPassword = "correcthorsebatterystaple";
       isNormalUser = true;
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel" "video"];
+      extraGroups = ["wheel" "video", "networkmanager"];
       shell = pkgs.zsh;
     };
+  };
+
+  hydenix = {
+    enable = true; # Enable Hydenix modules
+    # Basic System Settings (REQUIRED):
+    hostname = "D37T4-L4PT0P"; # REQUIRED: Set your computer's network name (change to something unique)
+    timezone = "America/Toronto"; # REQUIRED: Set timezone (examples: "America/New_York", "Europe/London", "Asia/Tokyo")
+    locale = "en_US.UTF-8"; # REQUIRED: Set locale/language (examples: "en_US.UTF-8", "en_GB.UTF-8", "de_DE.UTF-8")
+    # For more configuration options, see: ./docs/options.md
   };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
