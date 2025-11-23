@@ -128,8 +128,13 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
- 
-  programs.hyprland.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+    package = null;
+    portalPackage = null;
+    xwayland.enable = true;
+  };
 
   # Enable sound.
   services.pulseaudio.enable = false;
