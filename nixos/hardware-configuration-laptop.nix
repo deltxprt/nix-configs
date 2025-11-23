@@ -15,7 +15,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/9a25a88a-347c-4f7b-82f9-0ce9c70002af";
+    { device = "/dev/disk/by-id/nvme-SAMSUNG_MZALQ256HBJD-00BL2_S65FNA0T195541";
       fsType = "ext4";
     };
 
