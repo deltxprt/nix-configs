@@ -154,7 +154,7 @@
      playerctl
   ];
 
-  fonts.packages = with pkgs; [ nerdfonts ];
+  fonts.packages = [ ... ];
 
   networking.hostName = "D37T4-L4PT0P";
   networking.networkmanager.enable = true;
