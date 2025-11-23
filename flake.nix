@@ -15,7 +15,7 @@
       # uncomment the below if you know what you're doing, hydenix updates nixos-unstable every week or so
       # inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
     # Home manager
 #    home-manager.url = "github:nix-community/home-manager/release-25.05";
 #    home-manager.inputs.nixpkgs.follows = "nixpkgs";
