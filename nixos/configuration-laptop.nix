@@ -95,14 +95,31 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     python3
+     home-manager
+     wget
+     neovim
+     grim # screenshot functionality
+     slurp # screenshot functionality
+     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
+     mako # notification system developed by swaywm maintainer
+     playerctl
+     kitty
+     hyprland.packages.${pkgs.system}.default
+  ];
+
   # Enable the X11 windowing system.
   #services.xserver.enable = true;
 
   services.libinput.enable = true;
   services.displayManager.defaultSession = "hyprland";
+  services.displayManager.sddm.enable = true;
   services.xserver = {
 		enable = true;
-		displayManager.sddm.enable = true;
 	};
   services.flatpak.enable = true;
 
@@ -136,22 +153,6 @@
   # };
 
   programs.firefox.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     python3
-     home-manager
-     wget
-     neovim
-     grim # screenshot functionality
-     slurp # screenshot functionality
-     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
-     mako # notification system developed by swaywm maintainer
-     playerctl
-     kitty
-  ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
