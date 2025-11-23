@@ -7,7 +7,15 @@
   ];
 
   # hydenix home-manager options go here
-  hydenix.hm.enable = true;
+  hydenix.hm = {
+    enable = true;
+    theme.active = "Peace Of Mind";
+    social.enable = false;
+    spotify.enable = false;
+    editors.neovim.enable = true;
+    editors.vscode.enable = true;
+  };
+
   # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
 
   programs.yazi.enable = true;
@@ -15,12 +23,4 @@
     enable = true;
     enableZshIntegration = true;
   };
- 
-  hydenix.hm.theme.active = "Peace Of Mind"
-
-  hydenix.hm.social.enable = false;
-  hydenix.hm.spotify.enable = false;
-  hydenix.hm.editors.neovim.enable = true;
-  hydenix.hm.editors.vscode.enable = true;
-
 }
