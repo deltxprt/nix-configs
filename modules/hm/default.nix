@@ -23,7 +23,7 @@
       enable = true;
       monitor = {
         enable = true;
-        overrideConfig = "monitor = eDP-1, 1920x1080, 0x0, 1"
+        overrideConfig = "monitor = eDP-1, 1920x1080, 0x0, 1";
       };
     };
   };
