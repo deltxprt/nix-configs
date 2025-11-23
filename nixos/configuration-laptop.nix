@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration-laptop.nix
+      inputs.hyprland.nixosModules.default
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -109,7 +110,6 @@
      mako # notification system developed by swaywm maintainer
      playerctl
      kitty
-     hyprland.packages.${pkgs.system}.default
   ];
 
   # Enable the X11 windowing system.
