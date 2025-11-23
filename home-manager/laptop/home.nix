@@ -16,11 +16,8 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ../packages.nix
-    ../waybar.nix
     ../zsh.nix
     ../kitty.nix
-    ../sway.nix
-    ../tmux.nix
   ];
 
   nix = {
@@ -41,16 +38,7 @@
   home = {
     username = "delta";
     homeDirectory = "/home/delta";
-    pointerCursor = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-      size = 20;
-    };
   };
-
-  wayland.windowManager.sway.config.startup = [
-    {command = "swaybg -m fill -i ~/.config/backgrounds/landscape01.jpg"; always=true;}
-  ];
 
   programs.git = {
     enable = true;
@@ -58,7 +46,7 @@
     userEmail = "vincent.genest@protonmail.com";
   };
 
-  # Enable home-manager 
+  # Enable home-manager
   programs.home-manager.enable = true;
 
   # Nicely reload system units when changing configs
@@ -70,5 +58,5 @@
 
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 }

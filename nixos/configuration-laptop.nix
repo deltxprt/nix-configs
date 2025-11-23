@@ -105,9 +105,6 @@
   services.xserver = {
 		enable = true;
 		displayManager.lightdm.enable = true;
-		desktopManager = {
-			cinnamon.enable = true;
-		};
 	};
   #services.flatpak.enable = true;
 
@@ -117,20 +114,11 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-
-  # Setup SwayWM
-  # Enable the gnome-keyring secrets vault. 
-  # Will be exposed through DBus to programs willing to store secrets.
-  services.gnome.gnome-keyring.enable = true;
-
-  # enable Sway window manager
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
+ 
+  programs.hyprland.enabled = true;
 
   # Enable sound.
-  hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = true;
   # OR
   # services.pipewire = {
   #   enable = true;
@@ -211,29 +199,6 @@
   };
 
   security.polkit.enable = true;
-  security.pam.services.swaylock = {};
-
-  systemd.user.services.kanshi = {
-    description = "kanshi daemon";
-    environment = {
-      WAYLAND_DISPLAY="wayland-1";
-      DISPLAY = ":0";
-    }; 
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = ''${pkgs.kanshi}/bin/kanshi -c kanshi_config_file'';
-    };
-  };
-
-  services.greetd = {                                                      
-    enable = true;                                                         
-    settings = {                                                           
-      default_session = {                                                  
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "greeter";                                                  
-      };                                                                   
-    };                                                                     
-  };
 
   # List services that you want to enable:
 
@@ -268,7 +233,7 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }
 
