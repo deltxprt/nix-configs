@@ -101,7 +101,7 @@
   #services.xserver.enable = true;
 
   services.libinput.enable = true;
-  services.displayManager.defaultSession = "cinnamon";
+#  services.displayManager.defaultSession = "cinnamon";
   services.xserver = {
 		enable = true;
 		displayManager.lightdm.enable = true;
