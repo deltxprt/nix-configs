@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration-laptop.nix
-      inputs.hyprland.nixosModules.default
     ];
 
   # Use the systemd-boot EFI boot loader.

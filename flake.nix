@@ -44,7 +44,6 @@
         specialArgs = {inherit inputs outputs;};
         system = "x86_64-linux";
         modules = [
-          ./nixos/hyprland-cachix.nix
           ./nixos/configuration.nix
         ];
       };
@@ -57,7 +56,6 @@
         specialArgs = {inherit inputs outputs;};
         system = "x86_64-linux"; 
         modules = [
-          ./nixos/hyprland-cachix.nix
           ./nixos/configuration-laptop.nix
         ];
       };
