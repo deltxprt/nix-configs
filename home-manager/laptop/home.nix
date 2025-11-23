@@ -53,6 +53,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    systemd.enable = true;
   };
 
   # Nicely reload system units when changing configs

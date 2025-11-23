@@ -115,7 +115,7 @@
   #services.xserver.enable = true;
 
   services.libinput.enable = true;
-  services.displayManager.defaultSession = "hyprland";
+#  services.displayManager.defaultSession = "hyprland";
   services.displayManager.sddm.wayland.enable = true;
   services.xserver = {
 		enable = false;
