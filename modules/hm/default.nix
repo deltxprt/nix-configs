@@ -18,6 +18,14 @@
       vscode.enable = false;
       default = "nvim";
     };
+
+    hyprland = {
+      enable = true;
+      monitor = {
+        enable = true;
+        overrideConfig = "monitor = eDP-1, 1920x1080, 0x0, 1"
+      };
+    };
   };
 
   # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
