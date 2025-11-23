@@ -8,23 +8,16 @@
     git
     neovim
     brave
-    jetbrains.idea-ultimate
     localsend
     ntfy-sh
-    polybar
-    wofi
-    rofi-wayland
-    waybar
     rustup
     go
-    nodejs_22
+    nodejs_24
     gcc
     libgcc
     zig
-    tmux
     unzip
     thefuck
-    swaybg
     manix
     lazygit
     postman

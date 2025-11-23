@@ -57,7 +57,11 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -101,10 +105,10 @@
   #services.xserver.enable = true;
 
   services.libinput.enable = true;
-#  services.displayManager.defaultSession = "cinnamon";
+  services.displayManager.defaultSession = "hyprland";
   services.xserver = {
 		enable = true;
-		displayManager.lightdm.enable = true;
+		displayManager.sddm.enable = true;
 	};
   services.flatpak.enable = true;
 
@@ -118,7 +122,7 @@
   programs.hyprland.enable = true;
 
   # Enable sound.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   # OR
   # services.pipewire = {
   #   enable = true;
