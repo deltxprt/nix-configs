@@ -7,7 +7,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      inputs.hydenix.inputs.home-manager.nixosModules.home-manager
       ./hardware-configuration-laptop.nix
+      inputs.hydenix.nixosModules.default
     ];
 
   # Use the systemd-boot EFI boot loader.
