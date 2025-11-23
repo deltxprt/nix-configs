@@ -4,10 +4,29 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    hyprland.url = "github:hyprwm/Hyprland";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  nixConfig = {
+    # Tell Nix where to look for binary caches
+    substituters = [
+   "https://cache.nixos.org"          # default
+   "https://hyprland.cachix.org"
+  ];
+
+    # Mark the cache as trusted (required for binary substitution)
+    trusted-substituters = [
+      "https://hyprland.cachix.org"
+    ];
+
+    # Public key that signs the cache’s binaries
+    trusted-public-keys = [
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    ];
   };
 
   outputs = {
@@ -25,7 +44,28 @@
         specialArgs = {inherit inputs outputs;};
         system = "x86_64-linux"; 
         # > Our main nixos configuration file <
-        modules = [./nixos/configuration.nix];
+        modules = [
+          ./nixos/configuration.nix
+          # ---- expose the Cachix settings to the running system ----
+          ({ config, pkgs, ... }: {
+            nix.settings = {
+              substituters = config.nix.settings.substituters ++ [
+              "https://hyprland.cachix.org"
+              ];
+              trusted-substituters = config.nix.settings.trusted-substituters ++ [
+                "https://hyprland.cachix.org"
+              ];
+              trusted-public-keys = config.nix.settings.trusted-public-keys ++ [
+                "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+              ];
+            };
+          })
+
+          # ---- optional: pull Hyprland into the system packages ----
+          ({ pkgs, ... }: {
+            environment.systemPackages = [
+              hyprland.packages.${pkgs.system}.default   # or .hyprland if you prefer
+        ];
       };
       dev = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -37,7 +77,22 @@
         specialArgs = {inherit inputs outputs;};
         system = "x86_64-linux"; 
         # > Our main nixos configuration file <
-        modules = [./nixos/configuration-laptop.nix];
+        modules = [
+          ./nixos/configuration-laptop.nix
+          # ---- expose the Cachix settings to the running system ----
+          ({ config, pkgs, ... }: {
+            nix.settings = {
+              substituters = config.nix.settings.substituters ++ [
+              "https://hyprland.cachix.org"
+              ];
+              trusted-substituters = config.nix.settings.trusted-substituters ++ [
+                "https://hyprland.cachix.org"
+              ];
+              trusted-public-keys = config.nix.settings.trusted-public-keys ++ [
+                "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+              ];
+            };
+        ];
       };
 
     };
