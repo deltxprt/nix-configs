@@ -12,8 +12,12 @@
     theme.active = "Peace Of Mind";
     social.enable = false;
     spotify.enable = false;
-    editors.neovim.enable = true;
-    editors.vscode.enable = true;
+    editors = {
+      enable = true;
+      neovim = true;
+      vscode = false;
+      default = "nvim";
+    };
   };
 
   # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
