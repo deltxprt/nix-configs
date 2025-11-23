@@ -43,7 +43,6 @@
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         system = "x86_64-linux";
-        # > Our main nixos configuration file <
         modules = [
           ./nixos/hyprland-cachix.nix
           ./nixos/configuration.nix
@@ -52,13 +51,11 @@
       dev = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         system = "x86_64-linux"; 
-        # > Our main nixos configuration file <
         modules = [./nixos/dev/configuration.nix];
       };
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         system = "x86_64-linux"; 
-        # > Our main nixos configuration file <
         modules = [
           ./nixos/hyprland-cachix.nix
           ./nixos/configuration-laptop.nix
