@@ -196,8 +196,8 @@
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
-  services.openssh = mkForce {
-    enable = false;
+  services.openssh = {
+    enable = mkForce false;
     settings = {
       # Opinionated: forbid root login through SSH.
       PermitRootLogin = "no";
