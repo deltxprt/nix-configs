@@ -15,7 +15,7 @@
     libgcc
     zig
     unzip
-    thefuck
+    pay-respects
     manix
     lazygit
     postman
