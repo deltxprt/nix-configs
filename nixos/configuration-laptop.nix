@@ -118,7 +118,7 @@
   services.displayManager.defaultSession = "hyprland";
   services.displayManager.sddm.enable = true;
   services.xserver = {
-		enable = true;
+		enable = false;
 	};
   services.flatpak.enable = true;
 
