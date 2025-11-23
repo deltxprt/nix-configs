@@ -100,7 +100,7 @@
   # Enable the X11 windowing system.
   #services.xserver.enable = true;
 
-  service.libinput.enable = true;
+  services.libinput.enable = true;
   services.displayManager.defaultSession = "cinnamon";
   services.xserver = {
 		enable = true;
