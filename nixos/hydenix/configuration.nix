@@ -66,7 +66,7 @@ in
       {
         imports = [
           inputs.hydenix.homeModules.default
-          ./modules/hm # Your custom home-manager modules (configure hydenix.hm here!)
+          ../../modules/hm # Your custom home-manager modules (configure hydenix.hm here!)
         ];
       };
   };
