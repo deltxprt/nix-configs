@@ -154,7 +154,10 @@
      playerctl
   ];
 
-  fonts.packages = with pkgs; [ nerd-fonts ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+    nerd-fonts.fira-mono
+  ];
 
   networking.hostName = "D37T4-L4PT0P";
   networking.networkmanager.enable = true;
