@@ -15,7 +15,7 @@
     editors = {
       enable = true;
       neovim = true;
-      vscode = false;
+      vscode.enable = false;
       default = "nvim";
     };
   };
